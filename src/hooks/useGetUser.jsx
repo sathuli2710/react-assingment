@@ -27,7 +27,7 @@ const useGetUser = (setLoading = () => {}) => {
     setEmail(currEmail);
   };
   useEffect(() => {
-    if (counter !== 0) {
+    if (!localStorage.getItem("user") || counter !== 0) {
       getUser();
     }
   }, [counter]);
